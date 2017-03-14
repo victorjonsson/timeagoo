@@ -2,13 +2,12 @@ package timeagoo
 
 import (
     "testing"
-    "timeagoo/language"
     "time"
     "fmt"
 )
 
 func TestFormat(t *testing.T) {
-    english := language.EnglishDialogs{}
+    english := EnglishDialogs{}
     cases := map[time.Time]string{
         getTime(0): english.Now(),
 
@@ -17,7 +16,7 @@ func TestFormat(t *testing.T) {
         getTime(60):      fmt.Sprintf(english.InXSeconds(), "60"),
         getTime(61):      english.InOneMinute(),
         getTime(119):     fmt.Sprintf(english.InXMinutes(), "2"),
-        getTime(3600):    english.FormatTodayDate(getTime(3600)),
+        getTime(1800):    english.FormatTodayDate(getTime(1800)),
         getTime(86400):   english.FormatTomorrowDate(getTime(86400)),
         getTime(8640000): english.FormatDefaultDateFormat(getTime(8640000)),
 
@@ -26,7 +25,7 @@ func TestFormat(t *testing.T) {
         getTime(-60):      fmt.Sprintf(english.XSecondsAgo(), "60"),
         getTime(-61):      english.OneMinuteAgo(),
         getTime(-119):     fmt.Sprintf(english.XMinutesAgo(), "2"),
-        getTime(-3600):    english.FormatTodayDate(getTime(-3600)),
+        getTime(-1800):    english.FormatTodayDate(getTime(-1800)),
         getTime(-86400):   english.FormatYesterdayDate(getTime(-86400)),
         getTime(-8640000): english.FormatDefaultDateFormat(getTime(-8640000)),
     }

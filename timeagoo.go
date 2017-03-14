@@ -2,13 +2,16 @@ package timeagoo
 
 import (
     "time"
-    "timeagoo/language"
     "math"
     "fmt"
     "strconv"
 )
 
-func Format(t time.Time, dialogs language.Dialogs) string {
+
+/* * * Format Function * * */
+
+
+func Format(t time.Time, dialogs Dialogs) string {
     dateComparison := newDateComparison(t)
     if t.Unix() == dateComparison.now.Unix() {
         return dialogs.Now()
@@ -19,7 +22,7 @@ func Format(t time.Time, dialogs language.Dialogs) string {
     }
 }
 
-func getDialogForFutureTime(dateComparison dateComparison, dialogs language.Dialogs) string {
+func getDialogForFutureTime(dateComparison dateComparison, dialogs Dialogs) string {
     var str string
     if dateComparison.diff < 10 {
         str = dialogs.Soon()
@@ -39,7 +42,7 @@ func getDialogForFutureTime(dateComparison dateComparison, dialogs language.Dial
     return str
 }
 
-func getDialogForHistoricTime(dateComparison dateComparison, dialogs language.Dialogs) string {
+func getDialogForHistoricTime(dateComparison dateComparison, dialogs Dialogs) string {
     var str string
     if dateComparison.diff < 10 {
         str = dialogs.Recently()
@@ -58,6 +61,26 @@ func getDialogForHistoricTime(dateComparison dateComparison, dialogs language.Di
     }
     return str
 }
+
+
+/* * * Dialog interface * * */
+
+type Dialogs interface {
+    Now() string
+    Recently() string
+    Soon() string
+    InXSeconds() string
+    XSecondsAgo() string
+    InOneMinute() string
+    OneMinuteAgo() string
+    InXMinutes() string
+    XMinutesAgo() string
+    FormatTodayDate(t time.Time) string
+    FormatYesterdayDate(t time.Time) string
+    FormatTomorrowDate(t time.Time) string
+    FormatDefaultDateFormat(t time.Time) string
+}
+
 
 /* * * * dateComparison  * * * */
 

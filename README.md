@@ -13,14 +13,13 @@ package main
 
 import (
     "github.com/victorjonsson/timeagoo"
-    "github.com/victorjonsson/timeagoo/language"
     ...
 )
 
 ...
 
 func formatWhenIncidentOccurred(i Incident) {    
-    return timeagoo.Format(i.time, language.EnglishDialogs{})
+    return timeagoo.Format(i.time, timeagoo.EnglishDialogs{})
 }
 
 ```
@@ -28,7 +27,7 @@ func formatWhenIncidentOccurred(i Incident) {
 ## Multilingual support
 
 The package comes with an English translation of all dialogs. You can use another language by
- implementing the [Dialogs interface](https://github.com/victorjonsson/timeagoo/blob/master/language/language.go#L5).
+ implementing the [Dialogs interface](#).
 
 ```go
 import "time"

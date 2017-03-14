@@ -1,22 +1,6 @@
-package language;
+package timeagoo;
 
 import "time"
-
-type Dialogs interface {
-    Now() string
-    Recently() string
-    Soon() string
-    InXSeconds() string
-    XSecondsAgo() string
-    InOneMinute() string
-    OneMinuteAgo() string
-    InXMinutes() string
-    XMinutesAgo() string
-    FormatTodayDate(t time.Time) string
-    FormatYesterdayDate(t time.Time) string
-    FormatTomorrowDate(t time.Time) string
-    FormatDefaultDateFormat(t time.Time) string
-}
 
 type EnglishDialogs struct {
 }
