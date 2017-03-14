@@ -12,14 +12,14 @@ It's an alternative package to [justincampbell/timeago](https://github.com/justi
 package main
 
 import (
-	"github.com/victorjonsson/timeagoo"
-	"github.com/victorjonsson/timeagoo/language"
-	...
+    "github.com/victorjonsson/timeagoo"
+    "github.com/victorjonsson/timeagoo/language"
+    ...
 )
 
 ...
 
-func formatWhenIncidentOccurred(i Incident) {
+func formatWhenIncidentOccurred(i Incident) {    
     return timeagoo.Format(i.time, language.EnglishDialogs{})
 }
 
@@ -37,7 +37,7 @@ type swedishDialogs struct {
 }
 
 func (swedishDialogs) Recently() string {
-	return "Nyligen";
+    return "Nyligen";
 }
 ...
 
