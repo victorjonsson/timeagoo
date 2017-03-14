@@ -1,6 +1,6 @@
-language: go
+go_import_path: github.com/victorjonsson/
 
-go_import_path: github.com/victorjonsson/timeagoo/
+language: go
 
 go:
   - 1.5
