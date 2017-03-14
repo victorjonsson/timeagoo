@@ -6,7 +6,7 @@ It's an alternative package to [justincampbell/timeago](https://github.com/justi
 
 ## API
 
-`func Format(t time.Time, timeagoo.language.Dialogs) string`
+`func Format(time time.Time, dialogs timeagoo.language.Dialogs) string`
 
 ```go
 package main
@@ -27,5 +27,22 @@ func formatWhenIncidentOccurred(i Incident) {
 
 ## Multilingual support
 
-Lorem te ipsum...
+The package comes with an English translation of all dialogs. You can use another language by
+ implementing the [Dialogs interface](https://github.com/victorjonsson/timeagoo/blob/master/language/language.go#L5).
 
+```go
+import "time"
+
+type swedishDialogs struct {
+}
+
+func (swedishDialogs) Recently() string {
+	return "Nyligen";
+}
+...
+
+func FormatTimeagoo(t time.Time) string {
+    return timeagoo.Format(t, swedishDialogs{})
+}
+
+```
