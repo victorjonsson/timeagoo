@@ -1,15 +1,7 @@
 language: go
 
-sudo: false
+go_import_path: github.com/victorjonsson/timeagoo/
 
 go:
   - 1.5
   - 1.6
-  - tip
-
-matrix:
-  allow_failures:
-    - go: tip
-
-install:
-  - go get -t
