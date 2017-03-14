@@ -8,6 +8,7 @@ import (
 )
 
 
+
 /* * * Format Function * * */
 
 
@@ -22,7 +23,7 @@ func Format(t time.Time, dialogs Dialogs) string {
     }
 }
 
-func getDialogForFutureTime(dateComparison dateComparison, dialogs Dialogs) string {
+func getDialogForFutureTime(dateComparison *dateComparison, dialogs Dialogs) string {
     var str string
     if dateComparison.diff < 10 {
         str = dialogs.Soon()
@@ -42,7 +43,7 @@ func getDialogForFutureTime(dateComparison dateComparison, dialogs Dialogs) stri
     return str
 }
 
-func getDialogForHistoricTime(dateComparison dateComparison, dialogs Dialogs) string {
+func getDialogForHistoricTime(dateComparison *dateComparison, dialogs Dialogs) string {
     var str string
     if dateComparison.diff < 10 {
         str = dialogs.Recently()
@@ -90,8 +91,8 @@ type dateComparison struct {
     diff      int
 }
 
-func newDateComparison(givenTime time.Time) dateComparison {
-    d := dateComparison{now: time.Now(), givenTime: givenTime}
+func newDateComparison(givenTime time.Time) *dateComparison {
+    d := &dateComparison{now: time.Now(), givenTime: givenTime}
     d.diff = int(math.Abs(float64(d.now.Unix() - givenTime.Unix())))
     return d
 }

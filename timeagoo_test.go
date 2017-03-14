@@ -7,7 +7,7 @@ import (
 )
 
 func TestFormat(t *testing.T) {
-    english := EnglishDialogs{}
+    english := &EnglishDialogs{}
     cases := map[time.Time]string{
         getTime(0): english.Now(),
 
@@ -30,10 +30,10 @@ func TestFormat(t *testing.T) {
         getTime(-8640000): english.FormatDefaultDateFormat(getTime(-8640000)),
     }
 
-    for in, want := range cases {
-        got := Format(in, english)
-        if got != want {
-            t.Errorf("Format(%q, english) == %q, want %q", in, got, want)
+    for input, expected := range cases {
+        output := Format(input, english)
+        if output != expected {
+            t.Errorf("Format(%q, english) == %q, expected %q", input, output, expected)
         }
     }
 }
