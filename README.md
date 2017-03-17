@@ -5,6 +5,23 @@ This package provides you with a method that describes the time between `time.No
 It's an alternative package to [justincampbell/timeago](https://github.com/justincampbell/timeago).
 
 
+```
+... <-> -48h    # => Formatted date (eg. 24 jan 2012)
+-48h <-> -24h   # => Yesterday hh:mm 
+-24h <-> -10m   # => Today hh:mm
+-10m <-> -90s   # => About %s minutes ago 
+-90s <-> -60s   # => About one minute ago 
+-60s <-> -10s   # => About %s seconds ago
+-10s <-> 0s     # => Soon
+0 <-> 10s       # => Recently
+10sec <-> 60s   # => In about %s seconds
+60sec <-> 90s   # => In about one minute
+90s <-> 10m     # => In about %s minutes
+10m <-> 24h     # => Today hh:mm
+24h <-> 48h     # => Tommorrow hh:mm
+48h <-> ...     # => Formatted date (eg. 24 jan 2012)
+```
+
 ## API
 
 `func Format(time time.Time, dialogs timeagoo.language.Dialogs) string`
