@@ -18,7 +18,7 @@ It's an alternative package to [justincampbell/timeago](https://github.com/justi
 60sec <-> 90s   # => In about one minute
 90s <-> 10m     # => In about %s minutes
 10m <-> 24h     # => Today hh:mm
-24h <-> 48h     # => Tommorrow hh:mm
+24h <-> 48h     # => Tomorrow hh:mm
 48h <-> ...     # => Formatted date (eg. 24 jan 2012)
 ```
 
