@@ -6,7 +6,7 @@ It's an alternative package to [justincampbell/timeago](https://github.com/justi
 
 
 ```
-... <-> -48h    # => Formatted date (eg. 24 jan 2012)
+... <-> -48h    # => Formatted date (eg. Mon Jan 2 15:04:05)
 -48h <-> -24h   # => Yesterday hh:mm 
 -24h <-> -10m   # => Today hh:mm
 -10m <-> -90s   # => About %s minutes ago 
@@ -20,7 +20,7 @@ It's an alternative package to [justincampbell/timeago](https://github.com/justi
 90s <-> 10m     # => In about %s minutes
 10m <-> 24h     # => Today hh:mm
 24h <-> 48h     # => Tomorrow hh:mm
-48h <-> ...     # => Formatted date (eg. 24 jan 2012)
+48h <-> ...     # => Formatted date (eg. Mon Jan 2 15:04:05)
 ```
 
 ## API
