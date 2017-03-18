@@ -12,8 +12,8 @@ It's an alternative package to [justincampbell/timeago](https://github.com/justi
 -10m <-> -90s   # => About %s minutes ago 
 -90s <-> -60s   # => About one minute ago 
 -60s <-> -10s   # => About %s seconds ago
--10s <-> 0s     # => Soon
-0 <-> 10s       # => Recently
+-10s <-> 0s     # => Recently
+0 <-> 10s       # => Soon
 10sec <-> 60s   # => In about %s seconds
 60sec <-> 90s   # => In about one minute
 90s <-> 10m     # => In about %s minutes
