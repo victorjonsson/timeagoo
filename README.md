@@ -7,20 +7,20 @@ It's an alternative package to [justincampbell/timeago](https://github.com/justi
 
 ```
 ↓ Formatted date (eg. Mon Jan 2 2015)
--48h <-> -24h   # => Yesterday hh:mm 
--24h <-> -10m   # => Today hh:mm
--10m <-> -90s   # => About %s minutes ago 
--90s <-> -60s   # => About one minute ago 
--60s <-> -10s   # => About %s seconds ago
--10s <-> 0s     # => Recently
-0s              # => Now
-1s <-> 10s      # => Soon
-10s <-> 60s   # => In about %s seconds
-60s <-> 90s   # => In about one minute
-90s <-> 10m     # => In about %s minutes
-10m <-> 24h     # => Today hh:mm
-24h <-> 48h     # => Tomorrow hh:mm
-48h <-> ...     # => Formatted date (eg. Mon Jan 2 2021)
+↓ Yesterday hh:mm 
+↓ Today hh:mm
+↓ About %s minutes ago 
+↓ About one minute ago 
+↓ About %s seconds ago
+↓ Recently
+- Now
+↑ Soon
+↑ In about %s seconds
+↑ In about one minute
+↑ In about %s minutes
+↑ Today hh:mm
+↑ Tomorrow hh:mm
+↑ Formatted date (eg. Mon Jan 2 2021)
 ```
 
 ## API
