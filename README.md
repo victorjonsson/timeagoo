@@ -4,6 +4,7 @@
 This package provides you with a method that describes the time between `time.Now()` and a given time.
 It's an alternative package to [justincampbell/timeago](https://github.com/justincampbell/timeago).
 
+**Dialogs describing the time difference**
 
 ```
 ↓ Formatted date (eg. Mon Jan 2 2015)
